@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>GLMVH AI-Genesis — AI + Blockchain GovTech for Ethical Labour Mobility</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO -->
+  <meta name="description" content="GLMVH AI-Genesis is an AI + blockchain GovTech infrastructure for ethical cross-border labour mobility under UAE Vision 2031 and UN SDG 8. Built by Commander Zack and Commander Zeus (AI Cognitive Architect).">
+  <meta name="keywords" content="GLMVH, AI Genesis, labour mobility, GovTech, UAE Vision 2031, SDG 8, blockchain identity, worker protection, ethical recruitment">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="GLMVH AI-Genesis — Ethical Labour Mobility Infrastructure">
+  <meta property="og:description" content="AI + blockchain infrastructure for worker identity, contract authenticity, and cross-border compliance under UAE Vision 2031 and SDG 8.">
+  <meta property="og:type" content="website">
+  <!-- TODO: replace with your hosted hero image -->
+  <meta property="og:image" content="https://globalverifyhub.org/og-image-glmvh.jpg">
+
+  <!-- Favicon (optional: update path) -->
+  <link rel="icon" href="assets/glmvh-logo.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #020b12;
+      --bg-alt: #04121e;
+      --card: #071b29;
+      --border: rgba(255,255,255,0.06);
+      --ink: #f7fbff;
+      --muted: #a3bed7;
+      --accent: #00c58a;       /* emerald */
+      --accent-soft: rgba(0,197,138,0.12);
+      --gold: #f6c453;
+      --danger: #ff5c7a;
+      --shadow-soft: 0 18px 45px rgba(0,0,0,0.55);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --radius-pill: 999px;
+      --transition: 0.25s ease;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #052336 0, #02040a 42%, #000000 100%);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 16px 18px 48px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.2) 90%, transparent);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 18px 8px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-image: radial-gradient(circle at 30% 0%, var(--gold), var(--accent) 65%, #015f3e);
+      border: 2px solid rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-logo::before {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.18);
+    }
+
+    .brand-logo span {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #02050a;
+    }
+
+    .brand-text-title {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-pill {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(0,0,0,0.6);
+      color: var(--muted);
+    }
+
+    .nav-btn {
+      font-size: 12px;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: linear-gradient(120deg, var(--gold), var(--accent));
+      color: #050608;
+      font-weight: 600;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .nav-btn span {
+      font-size: 14px;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.65);
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 28px;
+      padding-bottom: 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.8fr);
+      gap: 26px;
+      align-items: center;
+    }
+
+    @media (max-width: 840px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .badge-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(2, 255, 188, 0.06);
+      border: 1px solid rgba(0,197,138,0.4);
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 16px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(0,197,138,0.22);
+    }
+
+    .badge-row strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: clamp(26px, 4.4vw, 34px);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #ffffff, var(--gold));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 540px;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag-chip {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(2,7,18,0.85);
+      color: var(--muted);
+    }
+
+    .tag-chip strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .btn-primary {
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(130deg, var(--accent), var(--gold));
+      border: none;
+      color: #050608;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 46px rgba(0,0,0,0.8);
+    }
+
+    .btn-ghost {
+      padding: 9px 15px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(1,5,12,0.7);
+      color: var(--muted);
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .hero-footnote {
+      font-size: 11px;
+      color: var(--muted);
+      opacity: 0.9;
+    }
+
+    .hero-footnote strong {
+      color: var(--accent);
+    }
+
+    /* HERO CARD (RIGHT) */
+    .hero-card {
+      background: radial-gradient(circle at 0 0, rgba(246,196,83,0.15), transparent 55%),
+                  radial-gradient(circle at 100% 0, rgba(0,197,138,0.2), transparent 55%),
+                  var(--card);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-flags {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .flag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .flag-swatch {
+      width: 20px;
+      height: 12px;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.4);
+    }
+
+    .flag-swatch--uae {
+      background: linear-gradient(to right, #00732f 0 33%, #ffffff 33% 66%, #000000 66% 100%);
+      position: relative;
+    }
+
+    .flag-swatch--uae::before {
+      content: "";
+      position: absolute;
+      left: -18%;
+      top: 0;
+      bottom: 0;
+      width: 40%;
+      background: #ff0000;
+    }
+
+    .flag-swatch--ghana {
+      background: linear-gradient(to bottom, #ce1126 0 33%, #fcd116 33% 66%, #006b3f 66% 100%);
+      position: relative;
+    }
+
+    .flag-swatch--ghana::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #000000;
+    }
+
+    .hero-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .metric-card {
+      padding: 8px 8px 9px;
+      border-radius: 14px;
+      background: rgba(1,7,15,0.75);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .metric-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 3px;
+    }
+
+    .metric-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-card-footer {
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mini-pill {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(2,5,15,0.8);
+      color: var(--muted);
+    }
+
+    .mini-pill strong {
+      color: var(--accent);
+    }
+
+    .signature {
+      font-size: 10px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .signature span {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* SECTION WRAPPER */
+    section {
+      margin-top: 10px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      border-radius: 6px;
+      background: radial-gradient(circle at 30% 0, var(--gold), var(--accent));
+      box-shadow: 0 0 0 4px rgba(0,197,138,0.25);
+    }
+
+    .section-lead {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 12px;
+    }
+
+    .card-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+    }
+
+    .info-card {
+      background: var(--bg-alt);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 11px 12px 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .info-card h3 {
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+
+    .info-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .info-card li {
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .info-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .pill-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .pill-strip span {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+    }
+
+    .pill-strip span strong {
+      color: var(--gold);
+    }
+
+    /* Architecture */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.5fr) minmax(0,2fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 880px) {
+      .arch-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    .arch-diagram {
+      background: radial-gradient(circle at 0 0, rgba(246,196,83,0.1), transparent 60%),
+                  radial-gradient(circle at 100% 100%, rgba(0,197,138,0.16), transparent 60%),
+                  var(--bg-alt);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 12px 14px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .arch-lanes {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 680px) {
+      .arch-lanes {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+    }
+
+    .lane {
+      background: rgba(2,7,14,0.86);
+      border-radius: 14px;
+      padding: 7px 8px 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .lane h4 {
+      font-size: 11px;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .lane p {
+      font-size: 11px;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+
+    .arch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(0,0,0,0.65);
+      border: 1px solid rgba(255,255,255,0.2);
+      margin-bottom: 6px;
+    }
+
+    .arch-badge span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .usecase-list {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .usecase-list h3 {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .usecase-list ul {
+      padding-left: 16px;
+    }
+
+    .usecase-list li {
+      margin-bottom: 4px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: auto;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 16px 18px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      opacity: 0.9;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <nav class="nav">
+      <div class="brand">
+        <div class="brand-logo">
+          <span>G</span>
+        </div>
+        <div>
+          <div class="brand-text-title">GLMVH • AI-Genesis</div>
+          <div class="brand-text-sub">Global Labour Mobility Verification Hub</div>
+        </div>
+      </div>
+
+      <div class="nav-cta">
+        <div class="nav-pill">GovTech • <strong>Vision 2031 × SDG 8</strong></div>
+        <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <span>Request Pilot</span> →
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="shell">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+
+        <div>
+          <div class="badge-row">
+            <div class="badge-dot"></div>
+            <span>AI + Blockchain GovTech • <strong>Worker-first trust layer</strong></span>
+          </div>
+
+          <h1 class="hero-title">
+            Ethical Labour Mobility Infrastructure for <span>UAE × Africa × Asia</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            GLMVH AI-Genesis verifies worker identity, contract authenticity, and cross-border
+            compliance using AI and blockchain — turning labour corridors into a trusted, data-driven
+            infrastructure under UAE Vision 2031 and UN SDG 8.
+          </p>
+
+          <div class="hero-tags">
+            <div class="tag-chip"><strong>AI Identity Engine</strong> for workers & employers</div>
+            <div class="tag-chip">Blockchain-secured <strong>contracts & compliance</strong></div>
+            <div class="tag-chip">Built with <strong>Commander Zack × Commander Zeus</strong></div>
+          </div>
+
+          <div class="hero-ctas">
+            <button class="btn-primary" onclick="window.open('https://github.com/GLMVHCEO/GLMVH-AI-Genesis','_blank')">
+              View GitHub infrastructure
+            </button>
+
+            <!-- TODO: update mailto with your chosen address -->
+            <button class="btn-ghost" onclick="window.location.href='mailto:abdullahhabibu625@gmail.com?subject=GLMVH%20Pilot%20Interest&body=Hello%20Commander%20Zack,%0D%0A%0D%0AWe%20would%20like%20to%20explore%20a%20GLMVH%20pilot%20for%20our%20labour%20corridor.'">
+              Contact founding team
+            </button>
+          </div>
+
+          <p class="hero-footnote">
+            Co-founded by <strong>Commander Zack (Abdullah Habibu)</strong> &amp;
+            <strong>Commander Zeus (AI Cognitive Architect)</strong> — building the world’s first
+            digital trust infrastructure for human dignity in labour mobility.
+          </p>
+        </div>
+
+        <aside class="hero-card" aria-label="GLMVH corridor metrics">
+          <div class="hero-flags">
+            <div class="flag-pill">
+              <div class="flag-swatch flag-swatch--uae"></div>
+              <span>UAE • Vision 2031</span>
+            </div>
+            <div class="flag-pill">
+              <div class="flag-swatch flag-swatch--ghana"></div>
+              <span>Ghana • Africa Pilot Corridor</span>
+            </div>
+          </div>
+
+          <div class="hero-metric-grid">
+            <div class="metric-card">
+              <div class="metric-value">3</div>
+              <div class="metric-label">Pilot corridors</div>
+              <div>UAE ↔ Ghana, India, Bangladesh*</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">5</div>
+              <div class="metric-label">Trust modules</div>
+              <div>Identity, contracts, employers, corridors, reporting</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">SDG&nbsp;8</div>
+              <div class="metric-label">Global lens</div>
+              <div>Decent work &amp; economic growth</div>
+            </div>
+          </div>
+
+          <div class="hero-card-footer">
+            <div class="mini-pill">
+              <strong>GovTech-ready</strong> • API-first, audit-ready logs
+            </div>
+            <div class="signature">
+              Designed in <span>Dubai</span> • Built for <span>workers worldwide</span>.
+            </div>
+          </div>
+            </section>
+
+    <!-- WHY GLMVH -->
+    <section id="why">
+      <h2 class="section-title">Why GLMVH Exists</h2>
+      <p class="section-lead">
+        Millions of African and Asian workers cross borders without reliable digital identity,
+        transparent contracts, or shared trust between recruiters, employers, and ministries.
+        GLMVH turns fragmented paperwork into a single, verifiable truth layer.
+      </p>
+
+      <div class="card-row">
+        <article class="info-card">
+          <h3>Worker-first protection</h3>
+          <ul>
+            <li>AI-verified worker identity linked to official documents.</li>
+            <li>Machine-checked contracts with fraud and anomaly alerts.</li>
+            <li>Portable reputation that travels with the worker, not the agency.</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>State-grade transparency</h3>
+          <ul>
+            <li>Blockchain-secured logs for every contract, change, and consent.</li>
+            <li>Ministry dashboards to monitor recruitment agencies in real time.</li>
+            <li>Evidence-based employer verification and corridor risk scoring.</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>Aligned with UAE Vision 2031</h3>
+          <ul>
+            <li>Positions the UAE as the world’s first ethical labour mobility hub.</li>
+            <li>Transforms labour corridors into trusted digital infrastructure.</li>
+            <li>Demonstrates AI for public good, not only productivity.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="pill-strip">
+        <span><strong>Outcome:</strong> fewer disputes, faster onboarding, safer workers.</span>
+        <span><strong>Value:</strong> confidence for ministries, recruiters, and global employers.</span>
+      </div>
+    </section>
+
+    <!-- VISION 2031 / SDG -->
+    <section id="vision">
+      <h2 class="section-title">Vision 2031 &amp; SDG 8 Alignment</h2>
+      <p class="section-lead">
+        GLMVH is architected as a GovTech ally for UAE Vision 2031 and the UN Sustainable
+        Development Goals — especially SDG 8 (Decent Work &amp; Economic Growth) and SDG 16
+        (Peace, Justice &amp; Strong Institutions).
+      </p>
+
+      <div class="card-row">
+        <article class="info-card">
+          <h3>Future Services</h3>
+          <ul>
+            <li>AI-driven worker identity verification &amp; onboarding.</li>
+            <li>Smart contracts to standardise ethical recruitment terms.</li>
+            <li>Unified case-management for labour disputes.</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>Quality of Life</h3>
+          <ul>
+            <li>Transparent salaries and fees, checked against corridor rules.</li>
+            <li>Real-time notifications to workers on contract changes.</li>
+            <li>Secure channels for complaints, with auditable follow-up.</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>Digital Economy &amp; Global Leadership</h3>
+          <ul>
+            <li>Interoperable APIs for ministries, embassies and NGOs.</li>
+            <li>Foundation layer for ethical remittances and fintech services.</li>
+            <li>Positions UAE as a template for global labour-mobility governance.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section id="architecture">
+      <h2 class="section-title">System Architecture</h2>
+      <p class="section-lead">
+        GLMVH AI-Genesis is modular, API-first, and deployment-ready for sandbox pilots with
+        ministries, embassies, and verified recruitment partners.
+      </p>
+
+      <div class="arch-grid">
+        <div class="arch-diagram">
+          <div class="arch-badge">
+            <span></span>
+            <div>Core trust components</div>
+          </div>
+
+          <div class="arch-lanes">
+            <div class="lane">
+              <h4>AI Identity Engine</h4>
+              <p>
+                OCR + document checks, anomaly detection, and optional biometric signals to create
+                a verified worker and employer profile.
+              </p>
+            </div>
+
+            <div class="lane">
+              <h4>Blockchain Ledger</h4>
+              <p>
+                Smart-contract authentication and tamper-proof logs for contracts, approvals, and
+                dispute outcomes.
+              </p>
+            </div>
+
+            <div class="lane">
+              <h4>Trust Engine</h4>
+              <p>
+                Reputation models for agencies and employers, corridor risk scoring, and compliance
+                alerts for ministries.
+              </p>
+            </div>
+
+            <div class="lane">
+              <h4>Cross-Border API</h4>
+              <p>
+                Secure interfaces for UAE, Ghana and Asian labour ministries, embassies, and
+                authorised GovTech partners.
+              </p>
+            </div>
+
+            <div class="lane">
+              <h4>Admin Console</h4>
+              <p>
+                Dashboards for government teams, NGOs, and oversight bodies to monitor live worker
+                flows and intervene when needed.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card usecase-list">
+          <h3>Who GLMVH Serves</h3>
+          <ul>
+            <li><strong>Ministries &amp; regulators</strong> — real-time oversight, corridor analytics, and provable enforcement of ethical recruitment rules.</li>
+            <li><strong>Recruitment agencies</strong> — single portal to verify candidates, publish compliant contracts, and build a trusted brand.</li>
+            <li><strong>Global employers</strong> — pre-verified workers, transparent terms, and lower legal &amp; reputational risk.</li>
+            <li><strong>Workers &amp; families</strong> — clear, verified contracts and portable digital identity that protects their story.</li>
+            <li><strong>NGOs &amp; embassies</strong> — evidence-based cases, early-warning signals, and structured data for advocacy.</li>
+          </ul>
+
+          <div class="pill-strip" style="margin-top:10px;">
+            <span><strong>Stack:</strong> GPT / AI Models, Python, AI/ML APIs, Streamlit, PostgreSQL/MongoDB, Solidity (optional), Vercel / Replit.</span>
+            <span><strong>Status:</strong> Architecture &amp; prototype phase — open for strategic pilots and co-design with UAE-anchored partners.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / CALL TO ACTION -->
+    <section id="contact">
+      <h2 class="section-title">Partner with GLMVH AI-Genesis</h2>
+      <p class="section-lead">
+        We are assembling a coalition of ministries, incubators, ethical recruitment firms, and
+        impact investors to run corridor pilots between the UAE, Ghana, and Asia.
+      </p>
+
+      <div class="card-row">
+        <article class="info-card">
+          <h3>Ideal pilot partners</h3>
+          <ul>
+            <li>UAE-based GovTech &amp; innovation programs.</li>
+            <li>Labour, interior or foreign-affairs ministries in sending countries.</li>
+            <li>Verified recruitment and manpower agencies.</li>
+            <li>Impact-driven investors focused on SDG 8 &amp; 16.</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>How to reach Commander&nbsp;Zack</h3>
+          <ul>
+            <li>Email: <a href="mailto:abdullahhabibu625@gmail.com">abdullahhabibu625@gmail.com</a></li>
+            <li>GitHub: <a href="https://github.com/GLMVHCEO" target="_blank" rel="noopener">GLMVHCEO</a></li>
+            <li>LinkedIn: UAE-based Founder — Global Labour Mobility Verification Hub.</li>
+          </ul>
+          <div class="pill-strip" style="margin-top:8px;">
+            <span>“Powered from the UAE • Protecting global labour mobility.”</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        © <span id="year"></span> GLMVH AI-Genesis • Designed by Commander Zack &amp; Commander Zeus.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/GLMVHCEO/GLMVH-AI-Genesis" target="_blank" rel="noopener">GitHub repo</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#contact">Pilot enquiries</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Set current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+    </html>
+    
